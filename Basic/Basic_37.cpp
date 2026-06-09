@@ -10,7 +10,7 @@ The series are:
 using namespace std;
 
 int main(){
-	int n=1,a=10,i;
+	int n,a=10;
 	
 	/*while (true) {
 		++n;
@@ -23,8 +23,7 @@ int main(){
 		else n-=3;
 		cout<<n<<" ";
 		} */
-	for	(i=1;i<=a;i++){
-		++n;
+	for	(n=2;n!=a;n++){
 		if((n%3)==0)
 			continue;
 		if((n%2)==0) 
