@@ -23,14 +23,25 @@ int main(){
     cout<<"x     x       x        x "<<endl;
     cout<<" xxxxx "<<endl;*/
     
-    int n=7;
-    for(int i=1;i<=n;i++){
-        for(int j=1;j<=n;j++){
-            if(i==1 || i==n || j==1 || j==n || (i==4 && j>=4) || (j==4 && i>=4))
-                cout<<"x";
-            else cout<<" ";
+ for(int row = 0; row < 7; row++) {
+        if(row == 0 || row == 6) {
+            cout << " ";
+            for(int i = 0; i < 5; i++) cout << "x";
+            cout << endl;
         }
-        cout<<endl;
+        else if(row == 1 || row == 5) {
+            cout << "x     x       x        x" << endl;
+        }
+        else if(row == 2 || row == 4) {
+            cout << "x             x        x" << endl;
+        }
+        else if(row == 3) {
+            cout << "x          ";
+            for(int i = 0; i < 7; i++) cout << "x";
+            cout << "  ";
+            for(int i = 0; i < 7; i++) cout << "x";
+            cout << endl;
+        }
     }
     return 0;
 }
