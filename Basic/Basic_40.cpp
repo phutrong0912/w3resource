@@ -13,11 +13,13 @@ using namespace std;
 
 int main(){
     double width,height;
-    cin>>width;
-    cin>>height;
+    cout<<"Input the width of the rectangle: ";
+	cin>>width;
+     cout<<"Input the height of the rectangle: ";
+	cin>>height;
     
-    cout<<" area : "<<width*height<<endl;
-    cout<<" perimeter : "<<2*(width+height)<<endl;
+    cout<<"The area of the rectangle: "<<width*height<<endl;
+    cout<<"The perimeter of the rectangle: "<<2*(width+height)<<endl;
     
     return 0;
 }

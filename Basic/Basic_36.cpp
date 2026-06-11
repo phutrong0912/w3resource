@@ -18,11 +18,10 @@ double truncates to int!:
 6*/
 
 #include<iostream>
-#include<iomanip>
 using namespace std;
 
 int main(){
-    cout<<fixed<<setprecision(1)<<endl;
+    /*
     
 	int a=6,b=9;
     cout<<(double)a/b<<endl;
@@ -34,10 +33,14 @@ int main(){
     cout<<(int)(c/d)<<endl;
     cout<<(c/(int)d)<<endl;
     
-	c=a;
+	c=(double)a;
     b=d;
-	cout<<c<<endl;
-	cout<<b<<endl;
+    cout<<d<<endl;
+	cout<<"int implicitly casts to double: "<<c<<endl;
+	cout<<"double truncates to int :"<<b<<endl;*/
 	
+	double x=6.0/9;
+	double y=(x*100)/100.0;
+	cout<<y<<endl;
 	return 0;
 }

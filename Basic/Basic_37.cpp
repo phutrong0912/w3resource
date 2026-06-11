@@ -10,9 +10,9 @@ The series are:
 using namespace std;
 
 int main(){
-	int n,a=10;
+	int n=1,a=3;
 	
-	/*while (true) {
+	while (true) {
 		++n;
 		if ((n%3)==0) 
 			continue;
@@ -22,13 +22,13 @@ int main(){
 			n+=3;
 		else n-=3;
 		cout<<n<<" ";
-		} */
-	for	(n=2;n!=a;n++){
+		} 
+/*	for	(n=2;n!=50;n++){
 		if((n%3)==0)
 			continue;
 		if((n%2)==0) 
 			n+=3;
 		else n-=3;
-		cout<<n<<" ";
-	}
+		cout<<n<<" "; 
+	}*/
 }
