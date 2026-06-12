@@ -13,7 +13,6 @@ using namespace std;
 
 int main(){
     double s,n,a,degree=180.0;
-    
     cout<<"Input the number of sides of the polygon: ";
     cin>>s;
     cout<<"Input the length of each sides of the polygon: ";

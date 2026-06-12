@@ -30,7 +30,6 @@ int main(){
     la2=la2*acos(-1.0)/180;
     lo2=lo2*acos(-1.0)/180;
 
-    //d = 2*r*asin(sqrt((pow(sin((la2-la1)/2),2)))+cos(la1)*cos(la2)*(pow(sin((lo2-lo1)/2),2)));
     d = 2*r*asin(sqrt(pow(sin((la2-la1)/2),2)+cos(la1)*cos(la2)*pow(sin((lo2-lo1)/2),2)));
     cout<<"The distance between those points is: "<<d;
     
