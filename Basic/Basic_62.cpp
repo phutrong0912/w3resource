@@ -19,7 +19,6 @@ int main(){
     for (int i = n ; i >= 3; i--) {
         if (Prime(i) && Prime(i - 2)) {
             cout << " The largest twin prime pair <= " << n << " is (" << (i-2) << ", " << i << ")" << endl;
-            return 0;
         }
     }
     cout << "No twin prime found." << endl;
