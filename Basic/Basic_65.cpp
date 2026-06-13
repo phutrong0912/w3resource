@@ -16,6 +16,7 @@ int main(){
     }
     else if (a*a+b*b==c*c || a*a+c*c==b*b || b*b+c*c==a*a){
         cout<<"The given lengths form a right triangle.";
-    } else 
-    cout<<"The given lengths do not form a right triangle.";    
+    } else {
+    cout<<"The given lengths do not form a right triangle.";  
+    }  
 }
