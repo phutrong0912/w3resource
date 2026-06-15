@@ -30,7 +30,7 @@ int main(){
     double Ox = (A*(y2 - y3) + B*(y3 - y1) + C*(y1 - y2)) / D;
     double Oy = (A*(x3 - x2) + B*(x1 - x3) + C*(x2 - x1)) / D;
 
-    cout<<"the central coordinate of a circumscribed circle of a triangle: "<<Ox<<" , "<<Oy<<endl;
+    cout<<"The central coordinate of a circumscribed circle of a triangle: "<<Ox<<" , "<<Oy<<endl;
 
     double OA = sqrt(pow(Ox - x1, 2) + pow(Oy - y1, 2));
     double OB = sqrt(pow(Ox - x2, 2) + pow(Oy - y2, 2));
