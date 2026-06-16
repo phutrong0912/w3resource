@@ -28,8 +28,8 @@ int main(int argc, char const *argv[])
     double dx2 = (x4 - x3);
     double dy1 = (y2 - y1);
     double dy2 = (y4 - y3);
-    double m = dx1 * dx2 + dy1 * dy2;
-    if (m == 0)
+    double v = dx1 * dx2 + dy1 * dy2;
+    if (v == 0)
     {
         cout << "Yes";
     }
