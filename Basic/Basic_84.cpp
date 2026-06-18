@@ -4,9 +4,9 @@ From Wikipedia
 In mathematics, an arithmetic progression (AP) or arithmetic sequence is a sequence of numbers such that the
 difference between the consecutive terms is constant. Difference here means the second minus the first.
 For instance, the sequence 5, 7, 9, 11, 13, 15, . . . is an arithmetic progression with common difference of 2.
-In mathematics, a geometric progression, also known as a geometric sequence, is a sequence of numbers where each term after 
-the first is found by multiplying the previous one by a fixed, non-zero number called the common ratio. 
-For example, the sequence 2, 6, 18, 54, ... is a geometric progression with common ratio 3. 
+In mathematics, a geometric progression, also known as a geometric sequence, is a sequence of numbers where each term after
+the first is found by multiplying the previous one by a fixed, non-zero number called the common ratio.
+For example, the sequence 2, 6, 18, 54, ... is a geometric progression with common ratio 3.
 Similarly 10, 5, 2.5, 1.25, ... is a geometric sequence with common ratio 1/2.
 Example:
 Sample Input: int nums1[] = { 1, 3, 5, 7 }
@@ -16,6 +16,8 @@ Sample Output: Arithmetic sequence */
 using namespace std;
 bool Arithmetic(int a[], int n)
 {
+    if (n < 2)
+        return false;
     int d = a[1] - a[0];
     for (int i = 1; i < n; i++)
     {
@@ -26,18 +28,26 @@ bool Arithmetic(int a[], int n)
 }
 bool Geometric(int a[], int n)
 {
+    if (n < 2)
+        return false;
 
-    int r = a[1] / a[0];
-    for (int i = 1; i < n; i++)
+        for (int i = 2; i < n; i++)
     {
-        if (a[i] / a[i - 1] != r)
+        if (a[i] == 0 || a[i-1] == 0)
+        {
             return false;
+        }
+
+        if ((long long)a[i] * a[0] != (long long)a[i - 1] * a[1])
+        {
+            return false;
+        }
     }
     return true;
 }
 int main(int argc, char const *argv[])
 {
-    int n,a[100];
+    int n, a[100];
     cout << "Input size of array: ";
     cin >> n;
     cout << "Input elements of array: ";
@@ -56,7 +66,7 @@ int main(int argc, char const *argv[])
     }
     else
     {
-        cout << "the sequence is not Arithmetic or Geometric" << endl;
+        cout << "The sequence is not Arithmetic or Geometric" << endl;
     }
 
     return 0;
