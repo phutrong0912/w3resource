@@ -11,16 +11,19 @@ Sample Output:
 #include <iostream>
 using namespace std;
 
-bool check(int a, int b, int c)
+#include <iostream>
+using namespace std;
+
+bool check(int x, int y, int z)
 {
-    return ((a < b && b < c) || (a > b && b > c));
+    return x < y && y < z;
 }
 
 int main()
 {
-    int a, b, c;
+    int x, y, z;
     cout << "Input three numbers: ";
-    cin >> a >> b >> c;
-    cout << (check(a, b, c)) << endl;
+    cin >> x >> y >> z;
+    cout << check(x, y, z);
     return 0;
 }
