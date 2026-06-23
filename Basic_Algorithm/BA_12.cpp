@@ -1,6 +1,6 @@
 /*Write a C++ program to check if a given string starts with 'C#' or not.
 Sample Input:
-"C++ Sharp"
+"C# Sharp"
 "C#"
 "C++"
 Sample Output:
@@ -14,10 +14,7 @@ using namespace std;
 
 bool check(string str)
 {
-    if (str.substr(0, 2) == "C#")
-        return true;
-    else
-        return false;
+   return str.substr(0, 2) == "C#";
 }
 int main(int argc, char const *argv[])
 {
