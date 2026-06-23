@@ -11,7 +11,6 @@ Sample Output:
 1*/
 
 #include <iostream>
-#include <cstdlib>
 using namespace std;
 
 bool Multiple10(int n)
