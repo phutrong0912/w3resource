@@ -10,15 +10,15 @@ Sample Output:
 #include <iostream>
 using namespace std;
 
-bool test(int a, int b) {
-    return !(a == 15 || a == 20 || b == 15 || b == 20);
+bool test(int arr[], int n) {
+   return n == 2 && arr[0] != 15 && arr[0] != 20 && arr[1] != 15 && arr[1] != 20;
 }
 
 int main(int argc, char const *argv[])
 {
-     int a, b;
+    int arr[2];
     cout << "Input elements: ";
-    cin >> a >> b;
-    cout << (test(a, b)) << endl;
+    cin >> arr[0] >> arr[1];
+    cout << test(arr, 2) << endl;
     return 0;
 }
