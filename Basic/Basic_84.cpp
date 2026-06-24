@@ -31,13 +31,12 @@ bool Geometric(int a[], int n)
     if (n < 2)
         return false;
 
-        for (int i = 2; i < n; i++)
+    for (int i = 2; i < n; i++)
     {
-        if (a[i] == 0 || a[i-1] == 0)
+        if (a[i - 1] == 0 || a[1] == 0)
         {
             return false;
         }
-
         if ((long long)a[i] * a[0] != (long long)a[i - 1] * a[1])
         {
             return false;
