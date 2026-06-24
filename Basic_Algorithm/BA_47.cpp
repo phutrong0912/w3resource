@@ -13,6 +13,8 @@ using namespace std;
 
 bool test(int a, int b, int c)
 {
+    if (a < 0 || b < 0 || c < 0)
+        return false;
     return a % 10 == b % 10 || a % 10 == c % 10 || b % 10 == c % 10;
 }
 
