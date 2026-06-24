@@ -10,9 +10,10 @@ Sample Output:
 #include <iostream>
 using namespace std;
 
-bool test(int x, int y)
-{
-    return x / 10 == y / 10 || x / 10 == y % 10 || x % 10 == y / 10 || x % 10 == y % 10;
+bool test(int x, int y) {
+    int x1 = x / 10, x2 = x % 10;
+    int y1 = y / 10, y2 = y % 10;
+    return (x1 == y1 || x1 == y2 || x2 == y1 || x2 == y2);
 }
 
 int main(int argc, char const *argv[])

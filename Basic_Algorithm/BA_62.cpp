@@ -8,12 +8,13 @@ Sample Output:
 ell
 
 ytho*/
+
 #include <iostream>
 using namespace std;
 
 string test(string str)
 {
-    return str.substr(1).substr(0, str.length() - 2);
+    return str.substr(1, str.length() - 2);
 }
 
 int main(int argc, char const *argv[])
