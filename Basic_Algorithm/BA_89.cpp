@@ -23,5 +23,4 @@ int main(int argc, char const *argv[])
     cin >> a >> b;
     cout << (test(a, b)) << endl;
     return 0;
-    return 0;
 }
