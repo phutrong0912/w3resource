@@ -10,29 +10,22 @@ New array:
 #include <iostream>
 using namespace std;
 
-void sumArray(int a[], int b[], int n)
+int sum(int a[], int n)
 {
-    int sumA = 0;
-    int sumB = 0;
+    int s = 0;
+
     for (int i = 0; i < n; i++)
-    {
-        sumA += a[i];
-        sumB += b[i];
-    }
-    if (sumA > sumB)
-    {
-        for (int i = 0; i < n; i++)
-        {
-            cout << a[i] << " ";
-        }
-    }
-    else
-    {
-        for (int i = 0; i < n; i++)
-        {
-            cout << b[i] << " ";
-        }
-    }
+        s += a[i];
+
+    return total;
+}
+
+void print(int a[], int n)
+{
+    for (int i = 0; i < n; i++)
+        cout << a[i] << " ";
+
+    cout << endl;
 }
 
 int main(int argc, char const *argv[])
@@ -40,14 +33,16 @@ int main(int argc, char const *argv[])
     int a[5], b[5], n = 3;
     cout << "Input elements array 1: ";
     for (int i = 0; i < n; i++)
-    {
         cin >> a[i];
-    }
+
     cout << "Input elements array 2: ";
     for (int i = 0; i < n; i++)
-    {
         cin >> b[i];
-    }
-    sumArray(a, b, n);
+
+    if (sum(a, n) >= sum(b, n))
+        print(a, n);
+    else
+        print(b, n);
+
     return 0;
 }

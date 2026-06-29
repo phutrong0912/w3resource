@@ -7,13 +7,12 @@ Sample Output:
 11
 10*/
 #include <iostream>
-#include <climits>
 using namespace std;
 
 int diff(int a[], int n)
 {
-    int maxv = INT_MIN;
-    int minv = INT_MAX;
+    int maxv = a[0];
+    int minv = a[0];
     for (int i = 0; i < n; i++)
     {
         minv = min(minv, a[i]);

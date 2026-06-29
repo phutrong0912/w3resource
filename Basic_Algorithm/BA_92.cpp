@@ -12,30 +12,30 @@ New array:
 #include <iostream>
 using namespace std;
 
-void Replace(int a[], int n)
+void Replace(int a[], int result[], int n)
 {
     for (int i = 0; i < n; i++)
+        result[i] = a[i];
+    for (int i = 0; i < n - 1; i++)
     {
-        if (a[i] == 5 && a[i + 1] == 7)
-        {
-            a[i + 1] = 1;
-        }
+        if (result[i] == 5 && result[i + 1] == 7)
+            result[i + 1] = 1;
     }
 }
 int main(int argc, char const *argv[])
 {
-    int n = 3, a[5];
-    cout<<"Input elements: ";
+    int n = 3, a[5], result[3];
+    cout << "Input elements: ";
     for (int i = 0; i < n; i++)
     {
         cin >> a[i];
     }
-    Replace(a,n);
-    cout<<"New array: ";
+    Replace(a, result, n);
+    cout << "New array: ";
     for (int i = 0; i < n; i++)
     {
-        cout<< a[i]<<" ";
+        cout << result[i] << " ";
     }
-    cout<<endl;
+    cout << endl;
     return 0;
 }
