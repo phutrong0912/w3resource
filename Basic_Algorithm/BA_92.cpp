@@ -15,9 +15,9 @@ using namespace std;
 void Replace(int a[], int result[], int n)
 {
     for (int i = 0; i < n; i++)
-        result[i] = a[i];
-    for (int i = 0; i < n - 1; i++)
     {
+        result[i] = a[i];
+
         if (result[i] == 5 && result[i + 1] == 7)
             result[i + 1] = 1;
     }
