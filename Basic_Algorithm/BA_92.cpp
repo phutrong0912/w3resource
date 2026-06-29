@@ -18,8 +18,8 @@ void Replace(int a[], int result[], int n)
     {
         result[i] = a[i];
 
-        if (result[i] == 5 && result[i + 1] == 7)
-            result[i + 1] = 1;
+        if (result[i-1] == 5 && result[i] == 7)
+            result[i] = 1;
     }
 }
 int main(int argc, char const *argv[])
