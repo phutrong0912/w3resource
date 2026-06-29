@@ -18,7 +18,7 @@ void Replace(int a[], int result[], int n)
     {
         result[i] = a[i];
 
-        if (result[i-1] == 5 && result[i] == 7)
+        if (i > 0 && result[i - 1] == 5 && result[i] == 7)
             result[i] = 1;
     }
 }
