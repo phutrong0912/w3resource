@@ -1,4 +1,4 @@
-/*Write a C++ program to check a given array of integers. Then, 
+/*Write a C++ program to check a given array of integers. Then,
 return true if the given array contains two 5's next to each other, or two 5's separated by one element.
 Sample Input:
 { 5, 5, 1, 5, 5 }
@@ -15,8 +15,8 @@ using namespace std;
 
 bool checkArray(int a[], int n)
 {
-    
-    for (int i = 0; i < n; i++)
+
+    for (int i = 0; i < n - 1; i++)
     {
         if (a[i] == 5 && a[i + 1] == 5)
             return true;

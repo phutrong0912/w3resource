@@ -15,7 +15,7 @@ using namespace std;
 
 bool checkArray(int a[], int n)
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n-1; i++)
     {
         if (a[i] == 3 && a[i+1] ==3 || a[i] == 5 && a[i+1] ==5 )
         {
