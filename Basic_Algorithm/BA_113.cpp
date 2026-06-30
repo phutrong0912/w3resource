@@ -17,6 +17,11 @@ bool checkArray(int a[], int n)
 {
     for (int i = 0; i < n; i++)
     {
+        // If the current element is 5,
+        // check whether it has another 5 next to it.
+        // - At begin of the array, there is no left neighbor.
+        // - At end of the array, there is no right neighbor.
+        // If neither neighbor is 5, return false.
         if (a[i] == 5 && (i == 0 || a[i - 1] != 5) && (i == n - 1 || a[i + 1] != 5))
         {
             return false;
@@ -34,6 +39,5 @@ int main(int argc, char const *argv[])
     for (int i = 0; i < n; i++)
         cin >> a[i];
     cout << checkArray(a, n) << endl;
-    return 0;
     return 0;
 }
