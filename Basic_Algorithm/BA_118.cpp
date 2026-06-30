@@ -6,7 +6,7 @@ Test Data:
 #include <iostream>
 using namespace std;
 
-int Average(int a[], int n)
+double Average(int a[], int n)
 {
     int mid = n / 2;
     int sum1 = 0, sum2 = 0;
@@ -17,8 +17,8 @@ int Average(int a[], int n)
     for (int i = mid; i < n; i++)
         sum2 += a[i];
 
-    int avg1 = sum1 / mid;
-    int avg2 = sum2 / (n - mid);
+    double avg1 = 1.0 * sum1 / mid;
+    double avg2 = 1.0 * sum2 / (n - mid);
 
     return (avg1 > avg2) ? avg1 : avg2;
 }
