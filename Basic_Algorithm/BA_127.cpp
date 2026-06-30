@@ -9,11 +9,11 @@ Expected Output :
 #include <string>
 using namespace std;
 
-void Copies(string a[], int n)
+void Copies(string a[], int n, string result[])
 {
     for (int i = 0; i < n; i++)
     {
-        cout << a[i] + a[i] + a[i] << " ";
+        result[i] = a[i] + a[i] + a[i];
     }
     cout << endl;
 }
@@ -22,11 +22,16 @@ int main(int argc, char const *argv[])
     int n;
     cout << "Input number: ";
     cin >> n;
-    string a[100];
-    cout << "Input elements: ";
+    string a[100], result[100];
     for (int i = 0; i < n; i++)
         cin >> a[i];
-    Copies(a, n);
+
+    Copies(a, n, result);
+
+    for (int i = 0; i < n; i++)
+        cout << result[i] << " ";
+
+    cout << endl;
 
     return 0;
 }

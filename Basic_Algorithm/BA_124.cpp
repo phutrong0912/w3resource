@@ -6,13 +6,12 @@ Test Data:
 #include <iostream>
 using namespace std;
 
-void create(int a[], int n)
+void create(int a[], int n, int result[])
 {
     for (int i = 0; i < n; i++)
     {
-        cout << a[i] * 5 << " ";
+        result[i] = a[i] * 5;
     }
-    cout << endl;
 }
 
 int main()
@@ -20,10 +19,19 @@ int main()
     int n;
     cout << "Input number: ";
     cin >> n;
-    int a[100];
+    int a[100], result[100];
+
     cout << "Input elements: ";
     for (int i = 0; i < n; i++)
         cin >> a[i];
-    create(a, n);
+
+    create(a, n, result);
+
+    cout << "New array: ";
+    for (int i = 0; i < n; i++)
+        cout << result[i] << " ";
+
+    cout << endl;
+
     return 0;
 }
