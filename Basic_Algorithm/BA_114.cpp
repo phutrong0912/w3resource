@@ -1,4 +1,5 @@
-/*Write a C++ program to check a given array of integers. The program will return true if the specified number of the same elements appears at the start and end of the given array.
+/*Write a C++ program to check a given array of integers. 
+The program will return true if the specified number of the same elements appears at the start and end of the given array.
 Sample Input:
 { 3, 7, 5, 5, 3, 7 }, 2
 { 3, 7, 5, 5, 3, 7 }, 3
@@ -13,12 +14,11 @@ using namespace std;
 
 bool checkArray(int a[], int n, int k)
 {
-    if (k > n)
-        return false;
+    int last=n-k;
 
     for (int i = 0; i < k; i++)
     {
-        if (a[i] != a[n - k + i])
+        if (a[i] != a[last + i])
             return false;
     }
     return true;
