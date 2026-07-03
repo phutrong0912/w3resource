@@ -15,19 +15,19 @@ using namespace std;
 int sum(int n)
 {
     int sum = 0;
+    int t = 0;
+    string s;
     for (int i = 1; i <= n; i++)
     {
-        int t = 0;
-        cout << "1";
-        for (int j = 2; j <= i; j++)
-        {
-            t += j;
-            cout << "+" << j;
-        }
-        t += 1;
-        cout << " = " << t << endl;
+        if (i == 1)
+            s = "1";
+        else
+            s += "+" + to_string(i);
+        t += i;
+        cout << s << " = " << t << endl;
         sum += t;
     }
+
     return sum;
 }
 

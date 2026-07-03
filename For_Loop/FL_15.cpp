@@ -1,5 +1,4 @@
 /*Write a C++ program that asks the user to enter positive integers in order to process count, maximum, minimum, and average or terminate the process with -1.
-
 Sample Output:
 Your input is for termination. Here is the result below:
 Number of positive integers is: 4
@@ -8,56 +7,56 @@ The minimum value is: 3
 The average is 6.00*/
 
 #include <iostream>
-#include <iomanip>
 using namespace std;
 
 int main()
 {
-    int num;
-    int count = 0, sum = 0;
-    int maxv, minv;
+    int n;
+    int count = 0, max = 0, min = 0;
+    int sum = 0;
+    bool flag = false; 
 
-    for (;;)
+    cout << "Input positive integers: " << endl;
+
+    while (true)
     {
-        cout << "Input a positive integer (-1 to stop): ";
-        cin >> num;
-
-        if (num == -1)
+        cin >> n;
+        if (n == -1)
             break;
 
-        if (num <= 0)
-            continue;
-
-        if (count == 0)
+        if (n > 0)
         {
-            maxv = minv = num;
-        }
-        else
-        {
-            if (num > maxv)
-                maxv = num;
-            if (num < minv)
-                minv = num;
-        }
+            count++;
+            sum += n;
 
-        sum += num;
-        count++;
+            if (!flag)
+            {
+                max = n;
+                min = n;
+                flag = true;
+            }
+            else
+            {
+                if (n > max)
+                    max = n;
+                if (n < min)
+                    min = n;
+            }
+        }
     }
 
-    cout << "\nYour input is for termination. Here is the result below:\n";
-
-    if (count > 0)
+    if (!flag)
     {
-        cout << "Number of positive integers is: " << count << endl;
-        cout << "The maximum value is: " << maxv << endl;
-        cout << "The minimum value is: " << minv << endl;
-        cout << fixed << setprecision(2);
-        cout << "The average is: " << (double)sum / count << endl;
+        cout << "No positive integers were entered." << endl;
     }
     else
     {
-        cout << "No positive integers were entered.\n";
+        double average = sum / count;
+        cout << "Your input is for termination. Here is the result below:" << endl;
+        cout << "Number of positive integers is: " << count << endl;
+        cout << "The maximum value is: " << max << endl;
+        cout << "The minimum value is: " << min << endl;
+        cout << "The average is: " << average << endl;
     }
-
     return 0;
 }

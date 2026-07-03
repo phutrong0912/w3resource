@@ -13,34 +13,28 @@ The sum of the above series is: -1.1375*/
 #include <cmath>
 using namespace std;
 
-double factorial(int n)
-{
-    double f = 1;
-    for (int i = 1; i <= n; i++)
-    {
-        f *= i;
-    }
-    return f;
-}
 double sum(int x, int n)
 {
     double sum = 0;
+    double t = 1; 
+
     for (int i = 0; i < n; i++)
     {
-        double t = pow(-1, i) * pow(x, 2 * i)/ factorial(2 * i);
-        cout << "term " << i + 1 << " value is: " << t<< endl;
+        cout << "term " << i + 1 << " value is: " << t << endl;
         sum += t;
+        t *= -1.0 * x * x / ((2 * i + 1) * (2 * i + 2));
     }
     return sum;
 }
-int main(int argc, char const *argv[])
+
+int main()
 {
     int x, n;
     cout << "Input the value of X: ";
     cin >> x;
     cout << "Input the value for nth term: ";
     cin >> n;
-    double result = sum(x, n);
+    int result = sum(x, n);
     cout << "The sum of the above series is: " << result << endl;
     return 0;
 }
