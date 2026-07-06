@@ -23,7 +23,7 @@ int sum(int n)
     return s;
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     int n;
     cout << "Input number of terms: ";

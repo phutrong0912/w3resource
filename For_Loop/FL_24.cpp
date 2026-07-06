@@ -21,7 +21,7 @@ double sum(int x, int n)
     return s;
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     int x, n;
     cout << "Input the value of x: ";

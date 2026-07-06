@@ -17,17 +17,12 @@ int main(int argc, char const *argv[])
     cin >> n;
     for (int i = 1; i <= n; i++)
     {
+        cout << "1/" << i;
+        s += 1.0 / i;
         if (i < n)
-        {
-            cout << "1/" << i <<" + ";
-            s += 1 / (double)i;
-        }
-        if (i==n){
-            cout << "1/" << i;
-            s += 1 /(double) i;
-        }
+            cout << " + ";
     }
     cout << endl;
-    cout << "The Sum of even Natural Numbers upto " << n << " terms: " << s;
+    cout << "The sum of the series upto " << n << " terms: " << s;
     return 0;
 }

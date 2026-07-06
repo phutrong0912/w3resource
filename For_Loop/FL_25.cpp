@@ -15,7 +15,7 @@ using namespace std;
 
 void sum(int x, int n)
 {
-    int t = x;
+    long long t = x;
     cout << "The values of series: ";
     for (int i = 1; i <= n; i++)
     {
@@ -24,7 +24,7 @@ void sum(int x, int n)
     }
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     int x, n;
     cout << "Input the value of x: ";

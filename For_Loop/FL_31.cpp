@@ -26,7 +26,7 @@ int sumAP(int start, int n, int d)
     return s;
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     int start, n, d;
     cout << "Input the starting number of the A.P. series: ";

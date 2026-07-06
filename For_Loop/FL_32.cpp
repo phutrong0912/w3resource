@@ -25,7 +25,7 @@ int sumGP(int start, int n, int ratio)
     return s;
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     int start, n, ratio;
     cout << "Input the starting number of the G.P. series: ";

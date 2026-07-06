@@ -25,7 +25,7 @@ void pyramid(int n)
     }
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     int n;
     cout << "Input number of rows: ";

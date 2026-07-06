@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
     cin >> n;
     for (int i = 1; i <= n; i++)
     {
-        double s = i * i * i;
+        int s = i * i * i;
         cout << "Number is : " << i << " and the cube of " << i << " is: " << s << endl;
     }
     return 0;

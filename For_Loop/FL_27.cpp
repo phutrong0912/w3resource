@@ -21,7 +21,7 @@ void fibonacci(int n)
     cout << endl;
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     int n;
     cout << "Input number of terms to display: ";

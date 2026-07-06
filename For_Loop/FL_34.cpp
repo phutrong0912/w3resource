@@ -17,7 +17,7 @@ int length(char str[])
     return count;
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     char str[100];
     cout << "Input a string: ";
