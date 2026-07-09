@@ -14,7 +14,10 @@ int main(int argc, char const *argv[])
     cin >> n; 
     f = n; 
     l = n % 10; 
-    for (f = n; f >= 10; f = f / 10); 
+    while (f >= 10)
+    {
+        f /= 10;
+    }
     cout << " The first digit of " << n << " is: " << f<< endl;
     cout << " The last digit of " << n << " is: " << l << endl;
 
