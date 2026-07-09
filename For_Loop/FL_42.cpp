@@ -1,3 +1,14 @@
+/*Write a C++ program that displays the pattern like a pyramid using asterisks, with odd numbers in each row. Mathematics
+
+Sample Output:
+                                     
+ Input number of rows: 5                                               
+                                                                       
+    *                                                                  
+   ***                                                                 
+  *****                                                                
+ ******* 
+*/
 #include <iostream>
 using namespace std;
 
