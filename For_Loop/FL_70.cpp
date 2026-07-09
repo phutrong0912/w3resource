@@ -3,34 +3,28 @@
 Sample Output:
 Input a decimal number: 35
 The binary number is: 100011*/
-
 #include <iostream>
+#include <string>
 using namespace std;
-void printBinary(int decimal)
+
+string decimalToBinary(int decimal)
 {
     if (decimal == 0)
-    {
-        cout << 0;
-        return;
-    }
-    int bits[32];
-    int index = 0;
+        return "0";
+    string bi;
     while (decimal > 0)
     {
-        bits[index++] = decimal % 2;
+        bi = char(decimal % 2 + '0') + bi;
         decimal /= 2;
     }
-    while (index--)
-    {
-        cout << bits[index];
-    }
+    return bi;
 }
-int main(int argc, char const *argv[])
+
+int main()
 {
     int decimal;
     cout << "Input a decimal number: ";
     cin >> decimal;
-    cout << "The binary number is: ";
-    printBinary(decimal);
+    cout << "The binary number is: " << decimalToBinary(decimal) << endl;
     return 0;
 }
