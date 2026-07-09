@@ -8,9 +8,9 @@ Input the exponent: 5
 #include <iostream>
 using namespace std;
 
-int power(int x, int n)
+long long power(int x, int n)
 {
-    int result = 1;
+    long long result = 1;
 
     for (int i = 1; i <= n; i++)
     {

@@ -9,31 +9,33 @@ After twos complement the value = 10010010*/
 #include <string>
 using namespace std;
 
-void twosComplement(string binary)
+string onesComplement(string bi)
 {
-    cout << "The original binary = " << binary << endl;
-    for (int i = 0; i < binary.length(); i++)
+    for (int i = 0; i < bi.length(); i++)
     {
-        if (binary[i] == '0')
-            binary[i] = '1';
+        if (bi[i] == '0')
+            bi[i] = '1';
         else
-            binary[i] = '0';
+            bi[i] = '0';
+    }
+    return bi;
+}
+
+string twosComplement(string bi)
+{
+    bi = onesComplement(bi);
+
+    for (int i = bi.length() - 1; i >= 0; i--)
+    {
+        if (bi[i] == '0')
+        {
+            bi[i] = '1';
+            return bi;
+        }
+        bi[i] = '0';
     }
 
-    cout << "After ones complement the value = " << binary << endl;
-    for (int i = binary.length() - 1; i >= 0; i--)
-    {
-        if (binary[i] == '0')
-        {
-            binary[i] = '1';
-            break;
-        }
-        else
-        {
-            binary[i] = '0';
-        }
-    }
-    cout << "After twos complement the value = " << binary << endl;
+    return bi;
 }
 
 int main(int argc, char const *argv[])
@@ -41,6 +43,11 @@ int main(int argc, char const *argv[])
     string bi;
     cout << "Input a 8 bit binary value: ";
     cin >> bi;
-    twosComplement(bi);
+    string one = onesComplement(bi);
+
+    cout << "The original binary = " << bi << endl;
+    cout << "After ones complement the value = " << one << endl;
+    cout << "After twos complement the value = " << twosComplement(bi) << endl;
+
     return 0;
 }
