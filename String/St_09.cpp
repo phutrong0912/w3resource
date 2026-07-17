@@ -7,31 +7,36 @@ Sample Output: True*/
 #include <string>
 using namespace std;
 
-bool checkEqual(string s, char c1, char c2)
+bool checkEqual(string s)
 {
-    int count1 = 0, count2 = 0;
+    int freq[256] = {0};
 
     for (int i = 0; i < s.length(); i++)
+        freq[(unsigned char)s[i]]++;
+
+    for (int i = 0; i < 256; i++)
     {
-        if (s[i] == c1)
-            count1++;
-        if (s[i] == c2)
-            count2++;
+        if (freq[i] == 0)
+            continue;
+
+        for (int j = i + 1; j < 256; j++)
+        {
+            if (freq[i] == freq[j] && freq[j] != 0)
+                return true;
+        }
     }
 
-    return count1 == count2;
+    return false;
 }
 int main(int argc, char const *argv[])
 {
     string s;
-    char c1, c2;
     cout << "Input a string: ";
     cin >> s;
-    cout << "Input two characters: ";
-    cin >> c1 >> c2;
-    if (checkEqual(s, c1, c2))
+    if (checkEqual(s))
         cout << "True";
     else
         cout << "False";
+
     return 0;
 }

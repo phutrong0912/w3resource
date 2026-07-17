@@ -21,34 +21,26 @@ int expand(string s, int left, int right)
         left--;
         right++;
     }
-
     return right - left - 1;
 }
 
 int longestPalindrome(string s)
 {
     int maxLength = 0;
-
     for (int i = 0; i < s.length(); i++)
     {
-        int len1 = expand(s, i, i);       // Palindrome có độ dài lẻ
-        int len2 = expand(s, i, i + 1);   // Palindrome có độ dài chẵn
-
+        int len1 = expand(s, i, i);       
+        int len2 = expand(s, i, i + 1);   
         maxLength = max(maxLength, max(len1, len2));
     }
-
     return maxLength;
 }
 
-int main()
+int main(int argc, char const *argv[])
 {
     string s;
-
     cout << "Input a string: ";
     cin >> s;
-
-    cout << "Length of the longest palindrome: "
-         << longestPalindrome(s) << endl;
-
+    cout << "Length of the longest palindrome of the said string: " << longestPalindrome(s) << endl;
     return 0;
 }
