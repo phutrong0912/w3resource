@@ -11,6 +11,7 @@ using namespace std;
 bool isTitleCase(string s)
 {
     bool word = true;
+
     for (int i = 0; i < s.length(); i++)
     {
         if ((s[i] >= 'A' && s[i] <= 'Z') ||
@@ -18,22 +19,23 @@ bool isTitleCase(string s)
         {
             if (word)
             {
-                if (!(s[i] >= 'A' && s[i] <= 'Z'))
+                if (s[i] < 'A' || s[i] > 'Z')
                     return false;
+
                 word = false;
             }
             else
             {
-                if (!(s[i] >= 'a' && s[i] <= 'z'))
+                if (s[i] < 'a' || s[i] > 'z')
                     return false;
             }
         }
-        else
+        else if (s[i] == ' ')
         {
-            if (s[i] == ' ')
-                word = true;
+            word = true;
         }
     }
+
     return true;
 }
 int main(int argc, char const *argv[])

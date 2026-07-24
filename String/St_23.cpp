@@ -4,41 +4,30 @@ Original Strings:
 String1: Python
 String2: Java
 Total number of unique characters of the said two strings: 9*/
-
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
+#include <unordered_set>
 using namespace std;
 
 int countUnique(string s1, string s2)
 {
-    bool freq[256] = {false};
-    int count = 0;
+    unordered_set<char> hashTable;
     for (int i = 0; i < s1.length(); i++)
-    {
-        if (!freq[(unsigned char)s1[i]])
-        {
-            freq[(unsigned char)s1[i]] = true;
-            count++;
-        }
-    }
+        hashTable.insert(s1[i]);
 
     for (int i = 0; i < s2.length(); i++)
-    {
-        if (!freq[(unsigned char)s2[i]])
-        {
-            freq[(unsigned char)s2[i]] = true;
-            count++;
-        }
-    }
-    return count;
+        hashTable.insert(s2[i]);
+
+    return hashTable.size();
 }
+
 int main(int argc, char const *argv[])
 {
     string s1, s2;
     cout << "Input first string: ";
-    getline(cin,s1);
+    getline(cin, s1);
     cout << "Input second string: ";
-    getline(cin,s2);
+    getline(cin, s2);
     cout << "Total number of unique characters of the said two strings: " << countUnique(s1, s2) << endl;
     return 0;
 }

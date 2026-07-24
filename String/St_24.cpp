@@ -6,18 +6,18 @@ Number of duplicate characters in the said string: 36*/
 
 #include <iostream>
 #include <string>
+#include <unordered_map>
 using namespace std;
 
 int countDuplicate(string s)
 {
-    int freq[256] = {0};
+    unordered_map<char, int> freq;
     int count = 0;
     for (int i = 0; i < s.length(); i++)
-        freq[(unsigned char)s[i]]++;
-
-    for (int i = 0; i < 256; i++)
+        freq[s[i]]++;
+    for (auto it = freq.begin(); it != freq.end(); it++)
     {
-        if (freq[i] > 1)
+        if (it->second > 1)
             count++;
     }
     return count;
