@@ -5,19 +5,18 @@ Test Data:
 
 #include <iostream>
 #include <string>
+#include <unordered_set>
 using namespace std;
-
-int uniqueCharacters(string s)
+bool uniqueCharacters(string s)
 {
-    bool index[256] = {false};
+    unordered_set<char> hashTable;
     for (int i = 0; i < s.length(); i++)
     {
-        if (index[(unsigned char)s[i]])
-            return 0;
-
-        index[(unsigned char)s[i]] = true;
+        if (hashTable.find(s[i]) != hashTable.end())
+            return false;
+        hashTable.insert(s[i]);
     }
-    return 1;
+    return true;
 }
 
 int main(int argc, char const *argv[])

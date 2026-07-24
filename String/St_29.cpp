@@ -13,19 +13,15 @@ string addCommas(long long n)
 {
     string s = to_string(n);
     string result;
-    int count = 0;
-
-    for (int i = s.length() - 1; i >= 0; i--)
+    int len = s.length();
+    for (int i = 0; i < len; i++)
     {
         result += s[i];
-        count++;
-
-        if (count % 3 == 0 && i != 0)
+        if ((len - i - 1) % 3 == 0 && i != len - 1)
             result += ',';
     }
-    reverse(result.begin(), result.end());
     return result;
-}
+}  
 
 int main(int argc, char const *argv[])
 {

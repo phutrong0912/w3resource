@@ -11,23 +11,13 @@ using namespace std;
 
 string alternateCase(string s)
 {
-    bool lower = true;
     for (int i = 0; i < s.length(); i++)
     {
-        if (s[i] >= 'A' && s[i] <= 'Z')
-        {
-            if (lower)
-                s[i] += 32;
-            lower = !lower;
-        }
-        else if (s[i] >= 'a' && s[i] <= 'z')
-        {
-            if (!lower)
-                s[i] -= 32;
-            lower = !lower;
-        }
+        if (i % 2 == 0)
+            s[i] = tolower(s[i]);
+        else
+            s[i] = toupper(s[i]);
     }
-
     return s;
 }
 
