@@ -3,15 +3,8 @@
 #include <algorithm>
 using namespace std;
 
-int main(int argc, char const *argv[])
+bool checkSum(int arr[], int n)
 {
-    int n;
-    cout << "Input number of elements: ";
-    cin >> n;
-    int arr[n];
-    cout << "Input array: ";
-    for (int i = 0; i < n; i++)
-        cin >> arr[i];
     sort(arr, arr + n);
     int largest = arr[n - 1];
     int sum = 0;
@@ -19,11 +12,22 @@ int main(int argc, char const *argv[])
     {
         sum += arr[i];
         if (sum == largest)
-        {
-            cout << "Yes " << endl;
-            return 0;
-        }
+            return true;
     }
-    cout << "No " << endl;
+    return false;
+}
+int main(int argc, char const *argv[])
+{
+     int n;
+    cout << "Input number of elements: ";
+    cin >> n;
+    int arr[n];
+    cout << "Input array: ";
+    for (int i = 0; i < n; i++)
+        cin >> arr[i];
+    if (checkSum(arr, n))
+        cout << "Yes";
+    else
+        cout << "No";
     return 0;
 }

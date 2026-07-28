@@ -2,21 +2,20 @@
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-
 int firstRepeating(int arr[], int n)
 {
-    unordered_map<int, int> freq;
-
-    for (int i = 0; i < n; i++)
-        freq[arr[i]]++;
-    for (int i = 0; i < n; i++)
+    unordered_map<int, bool> seen;
+    int ans = -1;
+    for (int i = n - 1; i >= 0; i--)
     {
-        if (freq[arr[i]] > 1)
-            return arr[i];
+        if (seen[arr[i]])
+            ans = arr[i];
+        else
+            seen[arr[i]] = true;
     }
-    return -1;
-}
 
+    return ans;
+}
 int main(int argc, char const *argv[])
 {
     int n;

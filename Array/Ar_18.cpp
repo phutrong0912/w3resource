@@ -12,13 +12,11 @@ void moveNegatives(int a[], int n)
         if (a[i] >= 0)
             temp[index++] = a[i];
     }
-
     for (int i = 0; i < n; i++)
     {
         if (a[i] < 0)
             temp[index++] = a[i];
     }
-
     for (int i = 0; i < n; i++)
         a[i] = temp[i];
 }
