@@ -2,9 +2,11 @@
 #include <iostream>
 #include <climits>
 using namespace std;
-void findElements(int a[], int n)
+
+int findElements(int a[], int n, int result[])
 {
     int first = INT_MIN, second = INT_MIN;
+
     for (int i = 0; i < n; i++)
     {
         if (a[i] > first)
@@ -17,24 +19,27 @@ void findElements(int a[], int n)
             second = a[i];
         }
     }
-    cout << "Elements having at least two greater elements: ";
 
+    int count = 0;
     for (int i = 0; i < n; i++)
     {
         if (a[i] < second)
-            cout << a[i] << " ";
+            result[count++] = a[i];
     }
-    cout << endl;
+    return count;
 }
 
 int main(int argc, char const *argv[])
 {
-    int n, a[100];
+     int n, a[100], result[100];
     cout << "Input number: ";
     cin >> n;
     for (int i = 0; i < n; i++)
         cin >> a[i];
+    int size = findElements(a, n, result);
+    cout << "Elements having at least two greater elements: ";
+    for (int i = 0; i < size; i++)
+        cout << result[i] << " ";
 
-    findElements(a, n);
     return 0;
 }

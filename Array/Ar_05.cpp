@@ -3,15 +3,13 @@
 #include <iostream>
 #include <climits>
 using namespace std;
-void MinElements(int a[], int n)
+
+bool minElements(int a[], int n, int first, int second)
 {
     if (n < 2)
-    {
-        cout << "array must contain at least 2 elements.\n";
-        return;
-    }
-    int first = INT_MAX;
-    int second = INT_MAX;
+        return false;
+    first = INT_MAX;
+    second = INT_MAX;
     for (int i = 0; i < n; i++)
     {
         int t = a[i];
@@ -25,8 +23,12 @@ void MinElements(int a[], int n)
             second = t;
         }
     }
-    cout << "The two smallest elements are: "<< first << " " << second << endl;
+    if (second == INT_MAX)
+        return false;  
+
+    return true;
 }
+
 int main(int argc, char const *argv[])
 {
     int n, a[100];
@@ -34,6 +36,15 @@ int main(int argc, char const *argv[])
     cin >> n;
     for (int i = 0; i < n; i++)
         cin >> a[i];
-    MinElements(a, n);
+    int first, second;
+    if (minElements(a, n, first, second))
+    {
+        cout << "The two smallest elements are: "
+             << first << " " << second << endl;
+    }
+    else
+    {
+        cout << "Array must contain at least two distinct elements.\n";
+    }
     return 0;
 }

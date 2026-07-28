@@ -3,19 +3,15 @@
 #include <climits>
 using namespace std;
 
-void MaxElements(int a[], int n)
+bool maxElements(int a[], int n, int first, int second)
 {
     if (n < 2)
-    {
-        cout << "array must contain at least 2 elements.\n";
-        return;
-    }
-    int first = INT_MIN;
-    int second = INT_MIN;
+        return false;
+    first = INT_MIN;
+    second = INT_MIN;
     for (int i = 0; i < n; i++)
     {
         int t = a[i];
-
         if (t > first)
         {
             second = first;
@@ -26,8 +22,9 @@ void MaxElements(int a[], int n)
             second = t;
         }
     }
-    cout << "The two largest elements are: "
-         << first << " " << second << endl;
+    if (second == INT_MIN)
+        return false; 
+    return true;
 }
 
 int main(int argc, char const *argv[])
@@ -37,6 +34,12 @@ int main(int argc, char const *argv[])
     cin >> n;
     for (int i = 0; i < n; i++)
         cin >> a[i];
-    MatElements(a, n);
+    int first, second;
+    if (maxElements(a, n, first, second))
+        cout << "The two largest elements are: "
+             << first << " " << second << endl;
+    else
+        cout << "Array must contain at least two distinct elements.\n";
+
     return 0;
 }
