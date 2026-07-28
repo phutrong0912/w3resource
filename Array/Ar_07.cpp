@@ -12,7 +12,6 @@ int mostFrequent(int a[], int n)
 
     int maxFreq = 0;
     int element = a[0];
-
     for (auto it : freq)
     {
         if (it.second > maxFreq)

@@ -7,7 +7,7 @@ using namespace std;
 
 void rearrange(int arr[], int n)
 {
-    int temp[n];
+    int temp[100];
     int left = 0;
     int right = n - 1;
     for (int i = 0; i < n; i++)

@@ -1,19 +1,27 @@
 /*Write a C++ program to move all negative elements of an array of integers to the end of the array. This is done without changing the order of the positive and negative elements of the array.*/
 #include <iostream>
 using namespace std;
+
 void moveNegatives(int a[], int n)
 {
-    int j = 0;
+    int temp[100];
+    int index = 0;
+
     for (int i = 0; i < n; i++)
     {
         if (a[i] >= 0)
-        {
-            swap(a[i], a[j]);
-            j++;
-        }
+            temp[index++] = a[i];
     }
-}
 
+    for (int i = 0; i < n; i++)
+    {
+        if (a[i] < 0)
+            temp[index++] = a[i];
+    }
+
+    for (int i = 0; i < n; i++)
+        a[i] = temp[i];
+}
 int main(int argc, char const *argv[])
 {
     int n;
