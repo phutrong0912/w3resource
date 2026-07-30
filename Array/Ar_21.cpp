@@ -3,30 +3,33 @@
 #include <unordered_map>
 using namespace std;
 
-void findRepeating(int arr[], int n)
+int findRepeating(int arr[], int n, int result[])
 {
     unordered_map<int, int> freq;
-
-    cout << "Repeating elements: ";
+    int count = 0;
     for (int i = 0; i < n; i++)
     {
         freq[arr[i]]++;
-
         if (freq[arr[i]] == 2)
-            cout << arr[i] << " ";
+            result[count++] = arr[i];
     }
-    cout << endl;
+    return count;
 }
 
-main(int argc, char const *argv[])
+int main(int argc, char const *argv[])
 {
     int n;
     cout << "Input number of elements: ";
     cin >> n;
-    int arr[n];
+    int arr[100];
+    int result[100];
     cout << "Input array: ";
     for (int i = 0; i < n; i++)
         cin >> arr[i];
-    findRepeating(arr, n);
+    int size = findRepeating(arr, n, result);
+    cout << "Repeating elements: ";
+    for (int i = 0; i < size; i++)
+        cout << result[i] << " ";
+
     return 0;
 }

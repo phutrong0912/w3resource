@@ -4,17 +4,16 @@
 using namespace std;
 int firstRepeating(int arr[], int n)
 {
-    unordered_map<int, bool> seen;
-    int ans = -1;
-    for (int i = n - 1; i >= 0; i--)
-    {
-        if (seen[arr[i]])
-            ans = arr[i];
-        else
-            seen[arr[i]] = true;
-    }
+    unordered_map<int, int> freq;
+    for (int i = 0; i < n; i++)
+        freq[arr[i]]++;
 
-    return ans;
+    for (int i = 0; i < n; i++)
+    {
+        if (freq[arr[i]] > 1)
+            return arr[i];
+    }
+    return -1;
 }
 int main(int argc, char const *argv[])
 {

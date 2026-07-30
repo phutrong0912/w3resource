@@ -1,34 +1,28 @@
 /*Write a C++ program to find the second smallest elements in a given array of integers.*/
-
 #include <iostream>
 #include <climits>
 using namespace std;
 
-bool minElements(int a[], int n, int first, int second)
+bool secondSmallest(int a[], int n, int second)
 {
     if (n < 2)
         return false;
-    first = INT_MAX;
+    int first = INT_MAX;
     second = INT_MAX;
     for (int i = 0; i < n; i++)
     {
-        int t = a[i];
-        if (t < first)
+        if (a[i] < first)
         {
             second = first;
-            first = t;
+            first = a[i];
         }
-        else if (t < second && t != first)
+        else if (a[i] < second && a[i] != first)
         {
-            second = t;
+            second = a[i];
         }
     }
-    if (second == INT_MAX)
-        return false;  
-
-    return true;
+    return second;
 }
-
 int main(int argc, char const *argv[])
 {
     int n, a[100];
@@ -36,15 +30,11 @@ int main(int argc, char const *argv[])
     cin >> n;
     for (int i = 0; i < n; i++)
         cin >> a[i];
-    int first, second;
-    if (minElements(a, n, first, second))
-    {
-        cout << "The two smallest elements are: "
-             << first << " " << second << endl;
-    }
+    int second;
+    if (secondSmallest(a, n, second))
+        cout << "Second smallest element: " << second << endl;
     else
-    {
         cout << "Array must contain at least two distinct elements.\n";
-    }
+
     return 0;
 }

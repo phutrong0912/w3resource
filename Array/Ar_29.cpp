@@ -3,60 +3,60 @@
 #include <climits>
 using namespace std;
 
-void secondLowestHighest(int arr[], int n)
+bool secondLowestHighest(int arr[], int n, int &secondMin, int &secondMax)
 {
     if (n < 2)
-    {
-        cout << "Array must have at least two elements.";
-        return;
-    }
+        return false;
 
-    int min1 = INT_MAX, min2 = INT_MAX;
-    int max1 = INT_MIN, max2 = INT_MIN;
+    int min1 = INT_MAX;
+    secondMin = INT_MAX;
+
+    int max1 = INT_MIN;
+    secondMax = INT_MIN;
 
     for (int i = 0; i < n; i++)
     {
-
         if (arr[i] < min1)
         {
-            min2 = min1;
+            secondMin = min1;
             min1 = arr[i];
         }
-        else if (arr[i] < min2 && arr[i] != min1)
+        else if (arr[i] < secondMin && arr[i] != min1)
         {
-            min2 = arr[i];
+            secondMin = arr[i];
         }
-
         if (arr[i] > max1)
         {
-            max2 = max1;
+            secondMax = max1;
             max1 = arr[i];
         }
-        else if (arr[i] > max2 && arr[i] != max1)
+        else if (arr[i] > secondMax && arr[i] != max1)
         {
-            max2 = arr[i];
+            secondMax = arr[i];
         }
     }
-
-    if (min2 == INT_MAX || max2 == INT_MIN)
-    {
-        cout << "Second lowest or second highest does not exist.";
-    }
-    else
-    {
-        cout << "Second lowest: " << min2 << endl;
-        cout << "Second highest: " << max2 << endl;
-    }
+    return !(secondMin == INT_MAX || secondMax == INT_MIN);
 }
+
 int main(int argc, char const *argv[])
 {
     int n;
     cout << "Input number of elements: ";
     cin >> n;
-    int arr[n];
+    int arr[100];
     cout << "Input array: ";
     for (int i = 0; i < n; i++)
         cin >> arr[i];
-    secondLowestHighest(arr, n);
+    int secondMin, secondMax;
+    if (secondLowestHighest(arr, n, secondMin, secondMax))
+    {
+        cout << "Second lowest: " << secondMin << endl;
+        cout << "Second highest: " << secondMax << endl;
+    }
+    else
+    {
+        cout << "Second lowest or second highest does not exist.";
+    }
+
     return 0;
 }
