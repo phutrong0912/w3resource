@@ -9,18 +9,17 @@ int mostFrequent(int a[], int n)
 
     for (int i = 0; i < n; i++)
         freq[a[i]]++;
-
     int maxFreq = 0;
     int element = a[0];
-    for (auto it : freq)
+
+    for (int i = 0; i < n; i++)
     {
-        if (it.second > maxFreq)
+        if (freq[a[i]] > maxFreq)
         {
-            maxFreq = it.second;
-            element = it.first;
+            maxFreq = freq[a[i]];
+            element = a[i];
         }
     }
-
     return element;
 }
 int main(int argc, char const *argv[])
@@ -31,7 +30,7 @@ int main(int argc, char const *argv[])
     for (int i = 0; i < n; i++)
         cin >> a[i];
     int element, frequency;
-    cout << "Most frequent element: " << mostFrequent(a,n)<< endl;
+    cout << "Most frequent element: " << mostFrequent(a, n) << endl;
 
     return 0;
 }

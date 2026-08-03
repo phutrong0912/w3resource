@@ -1,6 +1,4 @@
 /*Write a C++ program to separate even and odd numbers in an array of integers. Put all even numbers first, and then odd numbers.*/
-
-
 #include <iostream>
 using namespace std;
 

@@ -16,7 +16,11 @@ void separate01(int arr[], int n)
             right--;
 
         if (left < right)
+        {
             swap(arr[left], arr[right]);
+            left++;
+            right--;
+        }
     }
 }
 

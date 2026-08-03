@@ -2,10 +2,10 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
 string thirdLargest(string arr[], int n)
 {
     string first = "", second = "", third = "";
+
     for (int i = 0; i < n; i++)
     {
         if (arr[i].length() > first.length())
@@ -14,12 +14,12 @@ string thirdLargest(string arr[], int n)
             second = first;
             first = arr[i];
         }
-        else if (arr[i].length() > second.length() && arr[i].length() != first.length())
+        else if (arr[i].length() > second.length())
         {
             third = second;
             second = arr[i];
         }
-        else if (arr[i].length() > third.length() && arr[i].length() != second.length() && arr[i].length() != first.length())
+        else if (arr[i].length() > third.length())
         {
             third = arr[i];
         }

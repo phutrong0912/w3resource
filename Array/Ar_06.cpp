@@ -6,7 +6,6 @@ using namespace std;
 int findElements(int a[], int n, int result[])
 {
     int first = INT_MIN, second = INT_MIN;
-
     for (int i = 0; i < n; i++)
     {
         if (a[i] > first)
@@ -19,7 +18,6 @@ int findElements(int a[], int n, int result[])
             second = a[i];
         }
     }
-
     int count = 0;
     for (int i = 0; i < n; i++)
     {

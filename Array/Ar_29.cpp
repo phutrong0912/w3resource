@@ -10,7 +10,6 @@ bool secondLowestHighest(int arr[], int n, int &secondMin, int &secondMax)
 
     int min1 = INT_MAX;
     secondMin = INT_MAX;
-
     int max1 = INT_MIN;
     secondMax = INT_MIN;
 
@@ -21,16 +20,17 @@ bool secondLowestHighest(int arr[], int n, int &secondMin, int &secondMax)
             secondMin = min1;
             min1 = arr[i];
         }
-        else if (arr[i] < secondMin && arr[i] != min1)
+        else if (arr[i] != min1 && arr[i] < secondMin)
         {
             secondMin = arr[i];
         }
+
         if (arr[i] > max1)
         {
             secondMax = max1;
             max1 = arr[i];
         }
-        else if (arr[i] > secondMax && arr[i] != max1)
+        else if (arr[i] != max1 && arr[i] > secondMax)
         {
             secondMax = arr[i];
         }

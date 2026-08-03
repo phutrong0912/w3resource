@@ -4,15 +4,16 @@
 using namespace std;
 void updateArray(int a[], int n)
 {
-    for (int i = 0; i < n; i++)
+    int prev = a[0];
+    a[0] = a[0] * a[1];
+    for (int i = 1; i < n - 1; i++)
     {
-        if (i == 0)
-            a[i] = a[i] * a[i + 1];
-        else if (i == n - 1)
-            a[i] = a[i] * a[i - 1];
-        else
-            a[i] = a[i - 1] * a[i + 1];
+        int curr = a[i];
+        a[i] = prev * a[i + 1];
+        prev = curr;
     }
+
+    a[n - 1] = prev * a[n - 1];
 }
 int main(int argc, char const *argv[])
 {

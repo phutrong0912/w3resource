@@ -4,17 +4,15 @@
 #include <algorithm>
 #include <cmath>
 using namespace std;
-
-int x;
-
-bool compare(int a, int b)
+    s
+bool compare(int a, int b,int x )
 {
     return abs(a - x) > abs(b - x);
 }
 
 int main(int argc, char const *argv[])
 {
-    int n;
+    int n, x;
     cout << "Input number of elements: ";
     cin >> n;
     int arr[n];
