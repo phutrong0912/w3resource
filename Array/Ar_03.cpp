@@ -3,7 +3,7 @@
 #include <climits>
 using namespace std;
 
-bool secondLargest(int a[], int n, int second)
+bool secondLargest(int a[], int n, int &second)
 {
     if (n < 2)
         return false;
@@ -22,9 +22,8 @@ bool secondLargest(int a[], int n, int second)
         }
     }
 
-    return second;
+    return second != INT_MIN;
 }
-
 int main(int argc, char const *argv[])
 {
     int n, a[100];
@@ -36,7 +35,7 @@ int main(int argc, char const *argv[])
     if (secondLargest(a, n, second))
         cout << "Second largest element: " << second << endl;
     else
-        cout << "Array must contain at least two distinct elements.\n";
+        cout << "Array must contain at least two distinct elements.";
 
     return 0;
 }
