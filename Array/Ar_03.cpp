@@ -3,14 +3,12 @@
 #include <climits>
 using namespace std;
 
-int secondLargest(int a[], int n, int &second)
+int secondLargest(int a[], int n)
 {
     if (n < 2)
-        return false;
-
+        return INT_MIN;
     int first = INT_MIN;
-    second = INT_MIN;
-
+    int second = INT_MIN;
     for (int i = 0; i < n; i++)
     {
         if (a[i] > first)
@@ -23,9 +21,9 @@ int secondLargest(int a[], int n, int &second)
             second = a[i];
         }
     }
-
-    return (second != INT_MIN);
+    return second;
 }
+
 int main(int argc, char const *argv[])
 {
     int n;
@@ -35,12 +33,12 @@ int main(int argc, char const *argv[])
     cout << "Input array elements: ";
     for (int i = 0; i < n; i++)
         cin >> a[i];
-
-    int second;
-    if (secondLargest(a, n, second))
-        cout << "The second largest element is: " << second;
-    else
+    int second = secondLargest(a, n);
+    if (second == INT_MIN)
         cout << "Array must contain at least 2 distinct elements.";
+    else
+        cout << "The second largest element is: " << second;
 
     return 0;
 }
+
