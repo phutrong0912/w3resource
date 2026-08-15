@@ -5,10 +5,9 @@ Check - First string contains all letters from the second string :true*/
 
 #include <iostream>
 #include <string>
-#include <vector>
 using namespace std;
 
-bool containsAllLetters(const string str1, const string &str2)
+bool containsAllLetters(string str1, string str2)
 {
     for (char c : str2)
     {
@@ -31,5 +30,3 @@ int main(int argc, char const *argv[])
         cout << "false";
     return 0;
 }
-
-

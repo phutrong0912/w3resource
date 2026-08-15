@@ -35,7 +35,7 @@ int main(int argc, char const *argv[])
     vector<string> strings(n);
     cout << "Input vector elements: ";
     for (int i = 0; i < n; i++)
-        cin >> strings[i];
+        getline(cin >> ws, strings[i]);
     vector<string> result = findStringsWithNumbers(strings);
     cout << "Find strings that contain a number(s) from the said vector: ";
     if (result.empty())

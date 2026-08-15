@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
     vector<string> v(n);
     cout << "Input vector elements: ";
     for (int i = 0; i < n; i++)
-        cin >> v[i];
+        getline(cin >> ws, v[i]);
     vector<string> result = capitalize(v);
     cout << "Capitalize the first character of each vector element: ";
     for (const string &s : result)

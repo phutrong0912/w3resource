@@ -15,10 +15,7 @@ bool isConsecutive(vector<int> nums)
 
     for (int i = 1; i < nums.size(); i++)
     {
-        if (nums[i] == nums[i - 1]) // Trùng nhau
-            return false;
-
-        if (nums[i] != nums[i - 1] + 1) // Không liên tiếp
+        if (nums[i] != nums[i - 1] + 1) 
             return false;
     }
 
