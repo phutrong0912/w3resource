@@ -3,25 +3,28 @@
 #include <climits>
 using namespace std;
 
-bool secondSmallest(int a[], int n, int second)
+int secondSmallest(int arr[], int n)
 {
     if (n < 2)
-        return false;
+        return 0; 
+
     int first = INT_MAX;
-    second = INT_MAX;
+    int second = INT_MAX;
+
     for (int i = 0; i < n; i++)
     {
-        if (a[i] < first)
+        if (arr[i] < first)
         {
             second = first;
-            first = a[i];
+            first = arr[i];
         }
-        else if (a[i] < second && a[i] != first)
+        else if (arr[i] > first && arr[i] < second)
         {
-            second = a[i];
+            second = arr[i];
         }
     }
-    return second;
+
+    return second; 
 }
 int main(int argc, char const *argv[])
 {
@@ -30,11 +33,10 @@ int main(int argc, char const *argv[])
     cin >> n;
     for (int i = 0; i < n; i++)
         cin >> a[i];
-    int second;
-    if (secondSmallest(a, n, second))
-        cout << "Second smallest element: " << second << endl;
+    int second = secondSmallest(a, n);
+    if (second == INT_MAX)
+        cout << "Array must contain at least 2 distinct elements.";
     else
-        cout << "Array must contain at least two distinct elements.\n";
-
+        cout << "The second smallest element is: " << second;
     return 0;
 }
